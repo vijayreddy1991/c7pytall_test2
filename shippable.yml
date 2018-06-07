@@ -1,0 +1,34 @@
+language: python
+
+python:
+  #- 2.3 #.7 
+  #- 2.6 #.9 
+  - 2.7 #.5 
+  #- 3.1 #.5 
+  #- 3.2 #.5 
+  #- 3.3 #.7 
+  - 3.4 #.8 
+  - 3.5 #.5 
+  - 3.6 #.5
+
+runtime:
+  nodePool: dynamic__x86_64__CentOS_7__c4_large
+  
+build:
+  pre_ci_boot:
+    image_name: drydock/c7pytall
+    image_tag: master
+    pull: true
+    
+  ci:
+    - python --version 
+   # - pip --version #8.1.2
+    #- virtualenv --version #15.1.0
+    - docker pull shippabledocker/sample_node_pvt:ecr
+    
+integrations:
+    
+  hub:
+ #Docker integration
+    - integrationName: ship-docker
+      type: dockerRegistryLogin
