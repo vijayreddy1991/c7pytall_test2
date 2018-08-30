@@ -17,3 +17,6 @@ build:
     - python --version 
     - pip --version #8.1.2
     - virtualenv --version #15.1.0
+    - java -V
+    - node --version
+    
