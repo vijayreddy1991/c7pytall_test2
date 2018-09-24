@@ -4,8 +4,6 @@ python:
   - 2.7 #.5  
   - 3.6 #.5
 
-runtime:
-  nodePool: dynamic__x86_64__CentOS_7__c4_large
   
 build:
   pre_ci_boot:
@@ -15,8 +13,8 @@ build:
     
   ci:
     - python --version 
-    - pip --version #8.1.2
-    - virtualenv --version #15.1.0
+    - pip --version
+    - virtualenv --version
     - java --version
     - node --version
     
